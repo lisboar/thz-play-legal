@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>thz play uploader - login</title>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:40px auto;padding:0 16px;line-height:1.6;background:#140B24;color:#F5F2F7}code{word-break:break-all;display:block;background:#2E1A4F;padding:12px;border-radius:8px}a{color:#FF5C8A}</style></head>
+<body><h1>thz play uploader</h1>
+<p id="msg">Waiting for authorization...</p>
+<code id="code"></code>
+<p><a href="index.html">Back</a></p>
+<script>
+var p=new URLSearchParams(location.search);
+var c=p.get("code"),e=p.get("error");
+document.getElementById("msg").textContent=c?"Authorization received. Copy this code and paste it in the terminal:":(e?"Authorization failed: "+e:"No authorization data in this page.");
+document.getElementById("code").textContent=c||"";
+</script></body></html>
